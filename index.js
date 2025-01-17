@@ -89,7 +89,7 @@ UnifyGuestWifiPlatform.prototype.loadGuestWifi = async function() {
   
   let wlans = await this.unifiController.getWLanSettings()
   
-  wlans = compose(filter(wlan => wlan.is_guest), flatten)(wlans)
+  wlans = compose(flatten)(wlans);
   
   this.log.debug("loaded wlan settings") // , wlans)
   
